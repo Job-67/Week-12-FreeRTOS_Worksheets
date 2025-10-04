@@ -63,6 +63,11 @@ void app_main(void)
     ESP_LOGI(TAG, "Chip Model: %s", CONFIG_IDF_TARGET);
     ESP_LOGI(TAG, "Free Heap: %d bytes", esp_get_free_heap_size());
     ESP_LOGI(TAG, "Min Free Heap: %d bytes", esp_get_minimum_free_heap_size());
+    // Set log level for specific tag
+    esp_log_level_set("LOGGING_DEMO", ESP_LOG_DEBUG);
+
+    // Set global log level
+    esp_log_level_set("*", ESP_LOG_INFO);
     
     // CPU and Flash info
     esp_chip_info_t chip_info;
